@@ -28,6 +28,7 @@ public class ScoreAdder : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         _animator.SetBool("jumping", true);
+
         if(col.gameObject.tag == "DefaultPlatform"){
             _currentScore++;
             string StringScore = _currentScore.ToString();
@@ -36,7 +37,6 @@ public class ScoreAdder : MonoBehaviour
             pointSource.pitch = Random.Range(0.9f, 1.1f);
             pointSource.Play(0);
             CheckHighScore();
-        
          }         
     }
 
@@ -55,6 +55,4 @@ public class ScoreAdder : MonoBehaviour
     {
         _animator.SetBool("jumping", false);
     }
-
-
 }
