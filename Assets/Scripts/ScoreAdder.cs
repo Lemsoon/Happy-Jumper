@@ -9,6 +9,7 @@ public class ScoreAdder : MonoBehaviour
     public TMP_Text HighScore, CurrentScore;
     public AudioSource pointSource;
     private Animator _animator;
+    public CloudGenerator _cloudGenerator;
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -30,6 +31,7 @@ public class ScoreAdder : MonoBehaviour
         _animator.SetBool("jumping", true);
 
         if(col.gameObject.tag == "DefaultPlatform"){
+            _cloudGenerator.SpawnCloud();
             _currentScore++;
             string StringScore = _currentScore.ToString();
             CurrentScore.text = StringScore;
