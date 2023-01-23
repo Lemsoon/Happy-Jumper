@@ -25,8 +25,7 @@ public class CloudGenerator : MonoBehaviour
                 _genCloud.name = "Old Cloud";
                 _genCloud = null;
             }
-            else
-                Debug.Log("Not divisble by 2");
+
         }
     }
 
@@ -35,7 +34,6 @@ public class CloudGenerator : MonoBehaviour
         _secondNum++;
         if(_secondNum%2 == 0){
             int RandomNumber = Random.Range(0, 3);
-            Debug.Log("Divisible by 2");
             if(RandomNumber == 1)
             {
                 GameObject _originalCloud = GameObject.Find("Cloud_Default");
